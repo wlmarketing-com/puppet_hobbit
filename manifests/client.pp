@@ -10,7 +10,7 @@ class xymon::client (
     }
 
     $clienthostname = "${fqdn}"
-    file { '/etc/sysconfig/hobbit-client':
+    file { '/etc/default/hobbit-client':
         content => template('xymon/hobbit-client'),
         notify  => Service['hobbit-client'],
         require => Package['xymon-client'],
